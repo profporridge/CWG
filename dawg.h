@@ -9,8 +9,8 @@
 #ifndef wwfmax_dawg_h
 #define wwfmax_dawg_h
 
-#import "CWGLib.h"
-#import "tnode.h"
+#include "CWGLib.h"
+#include "tnode.h"
 
 #define MAX WORD_LENGTH
 

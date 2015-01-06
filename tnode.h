@@ -9,7 +9,7 @@
 #ifndef wwfmax_tnode_h
 #define wwfmax_tnode_h
 
-#import <stdbool.h>
+#include <stdbool.h>;
 
 struct tnode {
     struct tnode* Next;

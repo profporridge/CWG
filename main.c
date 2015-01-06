@@ -8,24 +8,24 @@
 
 #define BUILD_DATASTRUCTURES 1
 
-#import <stdlib.h>
-#import <stdio.h>
-#import <string.h>
-#import "CWG-Creator.h"
-#import "Justin-CWG-Search.h"
-#import "DictionaryManager.h"
-#import "assert.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "CWG-Creator.h"
+#include "Justin-CWG-Search.h"
+#include "DictionaryManager.h"
+#include "assert.h"
 
 int main(int argc, const char * argv[]) {
 #if BUILD_DATASTRUCTURES
     {
-        int numWords = 173101;
+        int numWords = 172820;
         char *words = calloc(numWords * WORD_LENGTH, sizeof(char));
         assert(words);
         int *wordLengths = malloc(numWords * sizeof(int));
         assert(wordLengths);
         
-        FILE *wordFile = fopen("dict.txt", "r");
+        FILE *wordFile = fopen("Word-list.txt", "r");
         assert(wordFile);
         char buffer[40];
         int i = 0;

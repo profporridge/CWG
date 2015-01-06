@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Llama Software. All rights reserved.
 //
 
-#import "DictionaryManager.h"
-#import <string.h>
-#import <stdio.h>
-#import <stdlib.h>
-#import "assert.h"
+#include "DictionaryManager.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "assert.h"
 
 #define GRAPH_DATA "CWG_Data_For_Word-List.dat"
 
@@ -111,7 +111,7 @@ int nextWord(DictionaryManager *mgr, char *outWord) {
     //else drop back until there are unexplored children
     if(item->index == 0) {
         do {
-            unsigned int offset = ffs(item->childListFormat);
+            unsigned int offset = __builtin_ffs(item->childListFormat);
             if(offset != 0) {
                 item->childListFormat >>= offset;
                 item->childLetterFormatOffset += offset;
@@ -147,7 +147,7 @@ LOOP_END:;
         item->childListFormat = childListFormat & 0x03FFFFFF;
 
         //seek to the first letter in the list
-        char offset = (char)ffs(item->childListFormat);
+        char offset = (char)__builtin_ffs(item->childListFormat);
         item->childLetterFormatOffset = offset + 'a' - 1;
         item->childListFormat >>= offset;
         assert(item->childLetterFormatOffset <= 'z');

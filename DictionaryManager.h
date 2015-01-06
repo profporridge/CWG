@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Llama Software. All rights reserved.
 //
 
-#import "CWGLib.h"
-#import <stdbool.h>
-#include <libkern/OSAtomic.h>
+#include "CWGLib.h"
+#include <stdbool.h>
+#include "libkern/OSAtomic.h"
 
 #define HASH_DEBUG (defined DEBUG && (NUM_THREADS == 1))
 
