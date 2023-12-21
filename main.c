@@ -24,7 +24,9 @@ int main(int argc, const char * argv[]) {
         for (int i = 0; i < argc; i++) {
             printf("%s\n", argv[i]);
         }
-
+        if (argc < 2) {
+            printf("please provide the file name  of the input file ");
+        }
         FILE* fp;
         int count = 0;
         char ch;
