@@ -5,3 +5,4 @@
 /build
 /cwg/Debug
 /cwg.vcxproj.filters
+*.user
