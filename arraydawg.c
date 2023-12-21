@@ -219,7 +219,7 @@ ArrayDawgPtr ArrayDawgInit(char **Dictionary, int *SegmentLenghts, int MaxString
     int TotalDangled = 0;
 
     // keep track of the number of nodes of each MaxChildDepth dangled recursively so we can check how many remaining nodes we need for the optimal array.
-    int DangleCount[Result->MaxStringLength];
+    int* DangleCount = (int*)malloc(DangleCount[Result->MaxStringLength]);
     for(int i = 0; i < Result->MaxStringLength; i++) {
         DangleCount[i] = 0;
     }

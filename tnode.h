@@ -5,11 +5,13 @@
 //  Created by Bion Oren on 11/5/12.
 //  Copyright (c) 2012 Llama Software. All rights reserved.
 //
-
+#pragma once
 #ifndef wwfmax_tnode_h
 #define wwfmax_tnode_h
 
-#include <stdbool.h>;
+
+
+#include <stdbool.h>
 
 struct tnode {
     struct tnode* Next;
