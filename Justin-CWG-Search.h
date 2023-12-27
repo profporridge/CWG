@@ -9,6 +9,10 @@
 #ifndef wwfmax_Justin_CWG_Search_h
 #define wwfmax_Justin_CWG_Search_h
 
+char* copy_array_without_element(char* array, int index);
+
+void Print_All_Possible_Words(char* inputChars);
+
 int debug();
 
 #endif

@@ -5,7 +5,9 @@
 //  Created by Bion Oren on 11/10/12.
 //  Copyright (c) 2012 Llama Software. All rights reserved.
 //
-
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -134,7 +136,8 @@ void printDawgDotRecurse(ArrayDawgPtr dawg, FILE *dawgdot, int parent, int index
 }
 
 void printDawgDot(ArrayDawgPtr dawg, int numNodes) {
-    FILE *dawgdot = fopen("dawg.dot", "w");
+    FILE* dawgdot;
+    fopen_s(&dawgdot, "dawg.dot", "w");
     fprintf(dawgdot, "digraph dawg {\n");
 
     for(int i = 0; i < numNodes; i++) {
@@ -413,7 +416,8 @@ ArrayDawgPtr ArrayDawgInit(char **Dictionary, int *SegmentLenghts, int MaxString
 
     printf("\nStep 14 - Create a preliminary encoding of the more advanced CWG, and store these intermediate arrays into data files.\n");
 
-    FILE *Text = fopen(TRADITIONAL_DAWG_TEXT_DATA,"w");
+    FILE* Text;
+    fopen_s(&Text, TRADITIONAL_DAWG_TEXT_DATA, "w");
 
     FILE *Main = fopen(DIRECT_GRAPH_DATA_PART_ONE,"wb");
     FILE *Secondary = fopen(DIRECT_GRAPH_DATA_PART_TWO,"wb");

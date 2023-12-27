@@ -5,7 +5,9 @@
 //  Created by Bion Oren on 12/9/12.
 //  Copyright (c) 2012 Llama Software. All rights reserved.
 //
-
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 #include "CWGLib.h"
 #include <stdbool.h>
 #include "libkern/OSAtomic.h"

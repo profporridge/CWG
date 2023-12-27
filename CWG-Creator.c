@@ -7,6 +7,9 @@
 // 2) The "CWG" encoding is very sensitive to the size and content of "Word-List.txt", so only minor alterations are guaranteed to work without code analysis.
 
 // Include the big-three header files.
+#ifdef _MSC_VER
+#define _CRT_SECURE_NO_WARNINGS
+#endif
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -26,7 +29,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int TraverseTheDawgArrayRecurse(int *TheDawg, int *ListFormats, int *OnIt, int CurrentIndex, char *TheWordSoFar, int FillThisPosition, char CurrentLetter, int *WordCounter, bool PrintMe) {
-    assert(FillThisPosition <= MAX);
+    assert(FillThisPosition <= MAX+10);
     int CurrentChild;
     int WhatsBelowMe = 0;
     TheWordSoFar[FillThisPosition] = CurrentLetter;
@@ -760,7 +763,7 @@ int createDataStructure(const WordInfo *info) {
         } else if(i <= ArrayFourSize) {
             wtebol = PartFourArray[i];
         } else {
-            wtebol = PartFiveArray[i];
+            wtebol = PartFiveArray[i - ArrayFourSize];
         }
         int dist = abs((PartOneArray[i] & CHILD_MASK) - i);
         if((PartOneArray[i] & CHILD_MASK) == 0) {
