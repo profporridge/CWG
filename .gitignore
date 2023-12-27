@@ -6,3 +6,7 @@
 /cwg/Debug
 /cwg.vcxproj.filters
 *.user
+*/x64/*
+*/build/*
+/x64/*
+*.dat
